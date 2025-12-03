@@ -3,7 +3,6 @@ package com.lonemods.overridder;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,7 +30,7 @@ public class MainActivity extends Activity {
 
         AccessChecker checker = new AccessChecker(this);
         String serviceName = "com.lonemods.overridder/com.lonemods.overridder.KeyService";
-        access.setText(checker.isServiceEnabled(serviceName) ? "Enabled" : "Service is NOT Enabled.");
+        access.setText(checker.isServiceEnabled(serviceName) ? "Enabled" : "NOT Enabled, click here to enable");
     }
 
     private void openSettings() {
