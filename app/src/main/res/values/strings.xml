@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">overRidder</string>
+    <string name="accessibility_service_description">Global hardware key detector</string>
+
+</resources>
