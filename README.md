@@ -46,7 +46,7 @@ Required part
 > keyCode=4065, scanCode=245
 
 Code replace
-- Inside the [MainActivity.kt]("https://github.com/dare-devil-ex/overRidder/blob/main/app/src/main/java/com/lonemods/overridder/MainActivity.kt) file, replace with those fetched codes
+- Inside the ![MainActivity.kt]("https://github.com/dare-devil-ex/overRidder/blob/main/app/src/main/java/com/lonemods/overridder/MainActivity.kt) file, replace with those fetched codes
 - replace these array vales accordingly
 ```kt
 private val youTube = arrayOf(4065, 245)
@@ -56,7 +56,7 @@ private val netflix = arrayOf(4062, 242)
 private val spotify = arrayOf(4099, 752)
 ```
 
-Inside the [AndroidManifest.xml]("https://github.com/dare-devil-ex/overRidder/blob/main/app/src/main/AndroidManifest.xml) change these packages to the desired package you wanted to load.
+Inside the ![AndroidManifest.xml]("https://github.com/dare-devil-ex/overRidder/blob/main/app/src/main/AndroidManifest.xml) change these packages to the desired package you wanted to load.
 
 ```xml
 <queries>
