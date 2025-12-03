@@ -41,6 +41,7 @@ logcat | grep KeyEvent
 ```
 Example log
 > KeyEvent { action=ACTION_DOWN, keyCode=4065, scanCode=245, metaState=0, flags=0x8, repeatCount=0, eventTime=3033575, downTime=3033575, deviceId=-1, source=0x301, displayId=-1 }
+
 Required part
 > keyCode=4065, scanCode=245
 
