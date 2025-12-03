@@ -9,6 +9,13 @@ import android.view.accessibility.AccessibilityEvent
 
 class KeyService : AccessibilityService() {
 
+    // YouTube keyCode & scanCode
+    private val youTube = arrayOf(4065, 245)
+    // Netflix keyCode & scanCode
+    private val netflix = arrayOf(4062, 242)
+    // Prime keyCode & scanCode
+    private val spotify = arrayOf(4099, 752)
+
     private fun launch(packageName: String) {
         try {
             val pm = packageManager
@@ -38,24 +45,21 @@ class KeyService : AccessibilityService() {
 
     override fun onKeyEvent(event: KeyEvent): Boolean {
 
-        // YouTube keyCode & scanCode
-        if (event.keyCode == 4065 || event.scanCode == 245) {
+        if (event.keyCode == youTube[0] || event.scanCode == youTube[1]) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
             launch("com.youtubetv.lonemods")
             return true
         }
 
-        // Netflix keyCode & scanCode
-        if (event.keyCode == 4062 || event.scanCode == 242) {
+        if (event.keyCode == netflix[0] || event.scanCode == netflix[1]) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
             launch("app.netmirror.newtv")
             return true
         }
 
-        // Prime keyCode & scanCode
-        if (event.keyCode == 4099 || event.scanCode == 752) {
+        if (event.keyCode == spotify[0] || event.scanCode == spotify[1]) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
-            launch("com.saikou.sozo_tv")
+            launch("com.spotify.tv.android")
             return true
         }
 
