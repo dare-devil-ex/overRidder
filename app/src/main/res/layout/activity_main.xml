@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     android:background="#662222"
     android:gravity="center_horizontal|center_vertical"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingEnd="7px">
 
     <TextView
         android:id="@+id/wkaieText"

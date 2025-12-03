@@ -65,21 +65,3 @@ class KeyService : AccessibilityService() {
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {}
     override fun onInterrupt() {}
 }
-
-
-// To generate random text while opening the app
-class Wkaie() {
-    companion object {
-        @JvmStatic
-        val greets = listOf("You’ve got this.",
-            "Keep going — progress is progress, no matter how small.",
-            "One step at a time.",
-            "Don’t stop now; you’re closer than you think.",
-            "You’re stronger than your excuses.",
-            "The only way out is through.",
-            "Small daily actions lead to big results.",
-            "Your future self is cheering for you.",
-            "You don’t have to be perfect — just consistent.",
-            "Believe in the work you're putting in.").random()
-    }
-}
