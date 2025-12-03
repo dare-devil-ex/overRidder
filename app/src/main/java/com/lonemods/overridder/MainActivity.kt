@@ -21,7 +21,6 @@ class KeyService : AccessibilityService() {
             val resolveInfoList = pm.queryIntentActivities(intent, 0)
 
             if (resolveInfoList.isNotEmpty()) {
-                // Pick the first activity
                 val activityInfo = resolveInfoList[0].activityInfo
                 val launchIntent = Intent(Intent.ACTION_MAIN).apply {
                     component = ComponentName(activityInfo.packageName, activityInfo.name)
@@ -29,7 +28,7 @@ class KeyService : AccessibilityService() {
                 }
                 startActivity(launchIntent)
             } else {
-                Log.d("ddex-errorLog", "No launchable activity found for $packageName")
+                Log.d("ddex-errorLog", "No launchable activity found for $packageName") // To catch the logs use 'ddex' keyword
             }
 
         } catch (e: Exception) {
@@ -37,22 +36,23 @@ class KeyService : AccessibilityService() {
         }
     }
 
-
-
     override fun onKeyEvent(event: KeyEvent): Boolean {
 
+        // YouTube keyCode & scanCode
         if (event.keyCode == 4065 || event.scanCode == 245) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
             launch("com.youtubetv.lonemods")
             return true
         }
 
+        // Netflix keyCode & scanCode
         if (event.keyCode == 4062 || event.scanCode == 242) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
             launch("app.netmirror.newtv")
             return true
         }
 
+        // Prime keyCode & scanCode
         if (event.keyCode == 4099 || event.scanCode == 752) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
             launch("com.saikou.sozo_tv")
@@ -66,6 +66,8 @@ class KeyService : AccessibilityService() {
     override fun onInterrupt() {}
 }
 
+
+// To generate random text while opening the app
 class Wkaie() {
     companion object {
         @JvmStatic
