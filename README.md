@@ -83,7 +83,11 @@ Yes, with own customization
 
 No
 
-## Modded 
+## Modded Apps for Tv
+
+- [YouTube Tv Mod](https://www.mediafire.com/file/rb1vphgcp3zkwvo/YouTubeMod_by_%2528%2540lonemods%2529.apk/file)
+- [Spotify Tv Mod](https://t.me/lonemods/376)
+- [Netmirror](https://www.mediafire.com/file/z8hbja0zjlvkpcn/NetMirrorTV.apk/file)
 
 ## Support
 
