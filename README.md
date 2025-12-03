@@ -19,6 +19,8 @@ overRidder lets users repurpose unused remote-control keys, providing a simple w
 
 ## Build
 
+This apk build works TCL C06 (mt5867)
+
 To build this project by your own
 
 - Use Android Studio or Any other IDEs
@@ -80,6 +82,9 @@ Yes, with own customization
 #### Does root necessary?
 
 No
+
+## Modded 
+
 ## Support
 
 For support, [Telegram](https://t.me/dare_devil_ex), [Instagram](https://instagram.com/dare_devil_ex) or join our [LoneMods](https://t.me/lonemods) channel.
