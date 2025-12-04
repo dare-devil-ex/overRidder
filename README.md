@@ -96,7 +96,7 @@ This [released apk](https://github.com/dare-devil-ex/overRidder/releases) only w
 For support, [Telegram](https://t.me/dare_devil_ex), [Instagram](https://instagram.com/dare_devil_ex) or join our [LoneMods](https://t.me/lonemods) channel.
 
 
-## Authors
+## Author
 
 - [@dare-devil-ex](https://www.github.com/dare-devil-ex)
 
