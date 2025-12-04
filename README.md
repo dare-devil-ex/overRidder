@@ -19,8 +19,6 @@ overRidder lets users repurpose unused remote-control keys on Android TV devices
 
 ## Build
 
-This apk build works TCL C06 (mt5867)
-
 To build this project by your own
 
 - Use Android Studio or Any other IDEs
@@ -88,6 +86,10 @@ No
 - [YouTube Tv Mod](https://www.mediafire.com/file/rb1vphgcp3zkwvo/YouTubeMod_by_%2528%2540lonemods%2529.apk/file)
 - [Spotify Tv Mod](https://t.me/lonemods/376)
 - [Netmirror](https://www.mediafire.com/file/z8hbja0zjlvkpcn/NetMirrorTV.apk/file)
+
+## Releases
+
+This [released apk](https://github.com/dare-devil-ex/overRidder/releases) only works TCL C06 (mt5867), Build your own according to your key and scan codes
 
 ## Support
 
