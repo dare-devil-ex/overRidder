@@ -1,7 +1,7 @@
 
 # OverRidder
 
-overRidder lets users repurpose unused remote-control keys on Android/Android TV devices.
+overRidder lets users repurpose unused remote-control keys on Android TV devices.
 
 
 ## Screenshot
