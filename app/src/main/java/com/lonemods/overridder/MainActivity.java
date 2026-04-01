@@ -3,6 +3,10 @@ package com.lonemods.overridder;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +19,18 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event != null) {
+            int keycode = event.getKeyCode();
+            int scancode = event.getKeyCode();
+            TextView log = findViewById(R.id.log);
+            log.setText("Key code: " + keyCode + "\t Scan code: " + scancode);
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+
+    @Override
     protected void onResume() {
         super.onResume();
 
@@ -25,7 +41,7 @@ public class MainActivity extends Activity {
 
         access.setOnClickListener(v -> {
             Toast.makeText(MainActivity.this, "Opening to the settings!", Toast.LENGTH_SHORT).show();
-            openSettings();
+            openSettings(v);
         });
 
         AccessChecker checker = new AccessChecker(this);
@@ -33,11 +49,14 @@ public class MainActivity extends Activity {
         access.setText(checker.isServiceEnabled(serviceName) ? "Enabled" : "NOT Enabled, click here to enable");
     }
 
-    private void openSettings() {
-        Intent intent = new Intent("android.settings.SETTINGS");
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 
+    public void openSettings(View view) {
+        Intent intent = new Intent(Settings.ACTION_SETTINGS);
+        startActivity(intent);
+    }
 }
 

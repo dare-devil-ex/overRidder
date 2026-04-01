@@ -6,15 +6,15 @@
     android:background="#662222"
     android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
-    android:paddingEnd="7px">
+    android:padding="30dp">
 
     <TextView
         android:id="@+id/wkaieText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal|center_vertical"
-        android:paddingTop="10px"
-        android:text="Dare Devil Ex"
+        android:paddingTop="10dp"
+        android:text="@string/ddex"
         android:textColor="#F5DAA7"
         android:textSize="48sp"
         android:textStyle="bold" />
@@ -23,6 +23,7 @@
         android:id="@+id/layer2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:focusable="auto"
         android:gravity="clip_horizontal|end"
         android:orientation="vertical">
 
@@ -40,16 +41,67 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal|center_vertical"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/lmodsGreets"
+        <LinearLayout
+            android:id="@+id/inputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/ScanCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="ScanCode"
+                android:inputType="number"
+                android:textColorHint="#FFFFFF" />
+
+            <Button
+                android:id="@+id/ScanBotton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="Button"
+                android:textColor="#BDB8B8" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_horizontal|center_vertical"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lmodsGreets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal|center_vertical"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#141313"
+            android:gravity="center"
+            android:textColor="#F6F1F1"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </LinearLayout>

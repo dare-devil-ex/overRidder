@@ -9,6 +9,7 @@ import android.view.accessibility.AccessibilityEvent
 
 class KeyService : AccessibilityService() {
 
+
     // YouTube keyCode & scanCode
     private val youTube = arrayOf(4065, 245)
     // Netflix keyCode & scanCode
