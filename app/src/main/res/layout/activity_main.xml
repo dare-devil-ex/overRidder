@@ -1,107 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layer1"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#662222"
-    android:gravity="center_horizontal|center_vertical"
-    android:orientation="vertical"
-    android:padding="30dp">
+    android:background="@color/bg_dark">
 
-    <TextView
-        android:id="@+id/wkaieText"
+    <!-- A responsive Guideline to keep the main content centered and not too wide on large screens -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
-        android:paddingTop="10dp"
-        android:text="@string/ddex"
-        android:textColor="#F5DAA7"
-        android:textSize="48sp"
-        android:textStyle="bold" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
 
-    <LinearLayout
-        android:id="@+id/layer2"
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:focusable="auto"
-        android:gravity="clip_horizontal|end"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 
-        <TextView
-            android:id="@+id/access"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="openSettings"
-            android:textColor="#CAAFAF"
-            android:textSize="14sp" />
-    </LinearLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
 
-    <LinearLayout
-        android:id="@+id/layer3"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal|center_vertical"
-        android:orientation="vertical">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <!-- Main Title Area -->
+    <TextView
+        android:id="@+id/wkaieText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/ddex"
+        tools:text="Ddex"
+        android:textColor="@color/text_primary"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:gravity="start|center_vertical"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toStartOf="@+id/card_settings"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Settings switches floating on the right side -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:strokeColor="@color/border_color"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toTopOf="@id/wkaieText"
+        app:layout_constraintBottom_toBottomOf="@id/wkaieText"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
 
         <LinearLayout
-            android:id="@+id/inputLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/logSwtich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logs"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/inputSwtich"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Input"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                app:thumbTint="@color/swtich_color"
+                app:trackTint="@color/border_color" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <View
+        android:id="@+id/divider_top"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/border_color"
+        app:layout_constraintTop_toBottomOf="@id/wkaieText"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Status Section -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_status"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/card_bg"
+        app:cardCornerRadius="16dp"
+        app:strokeColor="@color/border_color"
+        app:strokeWidth="1dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/divider_top"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:visibility="gone">
-
-            <EditText
-                android:id="@+id/ScanCode"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ems="10"
-                android:gravity="center"
-                android:hint="ScanCode"
-                android:inputType="number"
-                android:textColorHint="#FFFFFF" />
-
-            <Button
-                android:id="@+id/ScanBotton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:text="Button"
-                android:textColor="#BDB8B8" />
-
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:padding="24dp">
 
             <TextView
                 android:id="@+id/lmodsGreets"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="System Initialized"
+                tools:text="LoneMods Greetings"
+                android:textColor="@color/text_primary"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/accessSwitch"
+                android:layout_marginEnd="16dp"/>
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/accessSwitch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_horizontal|center_vertical"
-                android:textColor="#FFFFFF"
-                android:textSize="20sp" />
-        </LinearLayout>
+                android:onClick="openSettings"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp"
+                android:text="Accessibility"
+                app:layout_constraintTop_toTopOf="@id/lmodsGreets"
+                app:layout_constraintBottom_toBottomOf="@id/lmodsGreets"
+                app:layout_constraintEnd_toEndOf="parent" />
 
-        <TextView
-            android:id="@+id/log"
-            android:layout_width="match_parent"
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Input Layout -->
+    <LinearLayout
+        android:id="@+id/inputLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:gravity="center_vertical"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@id/card_status"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#141313"
-            android:gravity="center"
-            android:textColor="#F6F1F1"
-            android:textSize="16sp" />
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxStrokeColor="@color/accent_primary"
+            app:hintTextColor="@color/text_secondary">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ScanCode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Scan Code"
+                android:inputType="number"
+                android:textColor="@color/text_primary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ScanBotton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/accent_primary" />
     </LinearLayout>
-</LinearLayout>
+
+    <!-- Log Section at the bottom -->
+    <TextView
+        android:id="@+id/log"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/rounded_border"
+        android:padding="16dp"
+        android:fontFamily="monospace"
+        android:gravity="top|start"
+        android:textColor="@color/accent_secondary"
+        android:textSize="14sp"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="Log: Action triggered..."
+        app:layout_constraintTop_toBottomOf="@id/inputLayout"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_bottom"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

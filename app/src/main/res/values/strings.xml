@@ -2,4 +2,6 @@
     <string name="app_name">overRidder</string>
     <string name="accessibility_service_description">Global hardware key detector</string>
     <string name="ddex">Dare Devil Ex</string>
+    <string name="switch_01">Log panel</string>
+    <string name="switch_02">Input Panel</string>
 </resources>

@@ -1,14 +1,15 @@
 package com.lonemods.overridder
 
 import android.accessibilityservice.AccessibilityService
+import android.annotation.SuppressLint
 import android.content.ComponentName
 import android.content.Intent
 import android.util.Log
 import android.view.KeyEvent
 import android.view.accessibility.AccessibilityEvent
 
+@SuppressLint("AccessibilityPolicy")
 class KeyService : AccessibilityService() {
-
 
     // YouTube keyCode & scanCode
     private val youTube = arrayOf(4065, 245)
@@ -48,7 +49,7 @@ class KeyService : AccessibilityService() {
 
         if (event.keyCode == youTube[0] || event.scanCode == youTube[1]) {
             Log.d("daredevilex", "Dev[looper] wkaie!")
-            launch("com.youtubetv.lonemods")
+            launch("com.youtubetv.lmods")
             return true
         }
 
