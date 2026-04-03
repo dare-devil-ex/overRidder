@@ -5,8 +5,7 @@ overRidder lets users repurpose unused remote-control keys on Android TV devices
 
 
 ## Screenshot
-
-![](https://github.com/user-attachments/assets/3125543b-23e4-435c-a2ae-945203b8ac98)
+<img width="1280" height="720" alt="screenshot" src="https://github.com/user-attachments/assets/7e160570-7238-4daf-8ada-6747ed8f40d6" />
 
 ## Changes you need to do
 
