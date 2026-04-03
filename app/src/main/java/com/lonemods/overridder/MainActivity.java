@@ -96,8 +96,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openSettings(View view) {
-        Intent intent = new Intent(Settings.ACTION_SETTINGS);
-        startActivity(intent);
+        try {
+            Intent intent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
+            startActivity(intent);
+        } catch (Exception e) {
+            Intent intent = new Intent(Settings.ACTION_SETTINGS);
+            startActivity(intent);
+        }
     }
 }
 

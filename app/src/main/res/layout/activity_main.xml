@@ -84,11 +84,11 @@
                 android:id="@+id/inputSwtich"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
+                android:layout_marginTop="8dp"
                 android:text="Input"
                 android:textColor="@color/text_primary"
                 android:textSize="16sp"
-                android:layout_marginTop="8dp"
+                android:visibility="gone"
                 app:thumbTint="@color/swtich_color"
                 app:trackTint="@color/border_color" />
         </LinearLayout>
